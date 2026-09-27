@@ -53,6 +53,7 @@
   color: #475569;
   font-size: 0.95rem;
   font-weight: 500;
+  padding: 8px 4px;
 }
 
 .navigation a:hover {
@@ -103,7 +104,7 @@
 
 .hero-description {
   margin: 0 0 30px;
-  color: #64748b;
+  color: #475569;
   font-size: 1rem;
   line-height: 1.8;
 }
@@ -115,6 +116,7 @@
   background: #2563eb;
   color: #ffffff;
   font-weight: 600;
+  line-height: 1.4;
 }
 
 .primary-button:hover {
@@ -171,7 +173,7 @@
 
 .section-intro {
   max-width: 750px;
-  color: #64748b;
+  color: #475569;
   line-height: 1.8;
   font-size: 1.05rem;
 }
@@ -205,7 +207,7 @@
 
 .card p {
   margin: 0;
-  color: #64748b;
+  color: #475569;
   line-height: 1.7;
 }
 
@@ -240,7 +242,7 @@
 
 .step p {
   margin: 0;
-  color: #64748b;
+  color: #475569;
   line-height: 1.6;
 }
 
@@ -286,4 +288,30 @@
   .steps {
     grid-template-columns: 1fr;
   }
+}
+
+.lesson-video {
+  margin-top: 50px;
+}
+
+.lesson-video h2 {
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #0f172a;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.12);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }

@@ -9,7 +9,7 @@ function Header() {
                     <strong>IA + Pandas</strong>
                 </Link>
 
-                <nav className="navigation">
+                <nav className="navigation" aria-label="Navegação principal">
                     <Link to="/">Início</Link>
                     <Link to="/aula">Aula</Link>
                     <Link to="/pratica">Prática</Link>

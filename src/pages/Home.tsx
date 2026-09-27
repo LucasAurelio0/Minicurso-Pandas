@@ -87,7 +87,7 @@ function Home() {
                         </article>
 
                         <article className="card">
-                            <span className="card-icon">🐍</span>
+                            <span className="card-icon">🐼</span>
 
                             <h3>Pandas</h3>
 
@@ -105,6 +105,57 @@ function Home() {
                             <p>
                                 Utilize a IA para fazer perguntas, testar sua
                                 compreensão e identificar possíveis dúvidas.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section className="section">
+                <div className="container">
+                    <span className="section-label">
+                        ANTES DE COMEÇAR
+                    </span>
+
+                    <h2>O que você precisa saber?</h2>
+
+                    <p className="section-intro">
+                        Para acompanhar o minicurso, não é necessário ter
+                        experiência prévia com Pandas. Entretanto, alguns
+                        conhecimentos e recursos serão necessários.
+                    </p>
+
+                    <div className="cards">
+                        <article className="card">
+                            <span className="card-icon">🐍</span>
+
+                            <h3>Python básico</h3>
+
+                            <p>
+                                Conhecimentos básicos de programação em Python,
+                                como variáveis, funções e estruturas de dados.
+                            </p>
+                        </article>
+
+                        <article className="card">
+                            <span className="card-icon">📊</span>
+
+                            <h3>Estatística básica</h3>
+
+                            <p>
+                                Familiaridade com conceitos estatísticos básicos
+                                será suficiente para acompanhar as atividades.
+                            </p>
+                        </article>
+
+                        <article className="card">
+                            <span className="card-icon">💻</span>
+
+                            <h3>Recursos necessários</h3>
+
+                            <p>
+                                Computador com internet, navegador, conta Google
+                                para utilizar o Colab e acesso a uma ferramenta de IA.
                             </p>
                         </article>
                     </div>

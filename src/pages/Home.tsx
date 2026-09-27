@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import NextStep from '../components/NextStep'
 
 function Home() {
     return (
@@ -271,6 +272,11 @@ function Home() {
                     </div>
                 </div>
             </section>
+
+            <NextStep
+                label="Assistir a aula"
+                to="/aula"
+            />
         </main>
     )
 }

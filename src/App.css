@@ -1096,3 +1096,25 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.next-step {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  border-top: 1px solid #e2e8f0;
+}
+
+@media (max-width: 800px) {
+  .next-step {
+    margin-top: 45px;
+    padding-top: 30px;
+  }
+
+  .next-step .primary-button {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+}

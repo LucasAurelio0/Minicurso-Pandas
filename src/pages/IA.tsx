@@ -1,3 +1,5 @@
+import NextStep from '../components/NextStep'
+
 function IA() {
     return (
         <main className="section">
@@ -144,14 +146,13 @@ function IA() {
                         o diálogo entendendo melhor o assunto.
                     </p>
 
-                    <a
-                        href="/avaliacao"
-                        className="primary-button"
-                    >
-                        Fazer avaliação →
-                    </a>
                 </section>
             </div>
+
+            <NextStep
+                label="Avaliação"
+                to="/avaliacao"
+            />
         </main>
     )
 }

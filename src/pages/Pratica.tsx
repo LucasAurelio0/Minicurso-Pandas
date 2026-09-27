@@ -1,3 +1,5 @@
+import NextStep from '../components/NextStep'
+
 function Pratica() {
     return (
         <main className="section">
@@ -62,6 +64,11 @@ function Pratica() {
                     </a>
                 </section>
             </div>
+
+            <NextStep
+                label="Resumo do Método"
+                to="/ia"
+            />
         </main>
     )
 }

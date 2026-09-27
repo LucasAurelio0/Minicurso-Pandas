@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import NextStep from '../components/NextStep'
 
 type Question = {
     question: string
@@ -573,6 +574,11 @@ function Avaliacao() {
                     </div>
                 </section>
             </div>
+
+            <NextStep
+                label="Referências e materiais de apoio"
+                to="/referencias"
+            />
         </main>
     )
 }

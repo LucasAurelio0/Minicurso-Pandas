@@ -37,6 +37,7 @@ function Header() {
                     <Link to="/pratica" onClick={closeMenu}>Prática</Link>
                     <Link to="/ia" onClick={closeMenu}>Aprendendo com IA</Link>
                     <Link to="/avaliacao" onClick={closeMenu}>Avaliação</Link>
+                    <Link to="/referencias" onClick={closeMenu}>Referências</Link>
                 </nav>
             </div>
         </header>

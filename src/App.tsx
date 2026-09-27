@@ -8,6 +8,7 @@ import Aula from './pages/Aula'
 import Pratica from './pages/Pratica'
 import IA from './pages/IA'
 import Avaliacao from './pages/Avaliacao'
+import Referencias from './pages/Referencias'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/pratica" element={<Pratica />} />
           <Route path="/ia" element={<IA />} />
           <Route path="/avaliacao" element={<Avaliacao />} />
+          <Route path="/referencias" element={<Referencias />} />
         </Routes>
 
         <Footer />

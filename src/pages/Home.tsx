@@ -65,46 +65,40 @@ function Home() {
                         SOBRE O CURSO
                     </span>
 
-                    <h2>O que você vai aprender?</h2>
-
-                    <p className="section-intro">
-                        Neste minicurso, você realizará uma exploração inicial
-                        de dados utilizando a biblioteca Pandas, enquanto
-                        desenvolve estratégias para aprender por meio da
-                        explicação e do diálogo com IA.
-                    </p>
+                    <h2>Informações do minicurso</h2>
 
                     <div className="cards">
                         <article className="card">
-                            <span className="card-icon">📊</span>
+                            <span className="card-icon">👤</span>
 
-                            <h3>Exploração de dados</h3>
+                            <h3>Autor</h3>
 
                             <p>
-                                Aprenda a observar a estrutura e as características
-                                iniciais de um conjunto de dados utilizando Pandas.
+                                Lucas Aurélio dos Santos Vieira.
                             </p>
                         </article>
 
                         <article className="card">
-                            <span className="card-icon">🐼</span>
+                            <span className="card-icon">🎓</span>
 
-                            <h3>Pandas</h3>
+                            <h3>Público-alvo</h3>
 
                             <p>
-                                Compreenda o propósito dos principais comandos
-                                utilizados durante a exploração inicial.
+                                Estudantes de Ciência da Computação e áreas
+                                relacionadas que possuam conhecimentos básicos
+                                de Python e estatística.
                             </p>
                         </article>
 
                         <article className="card">
-                            <span className="card-icon">🤖</span>
+                            <span className="card-icon">📚</span>
 
-                            <h3>Diálogo com IA</h3>
+                            <h3>Experiência prévia</h3>
 
                             <p>
-                                Utilize a IA para fazer perguntas, testar sua
-                                compreensão e identificar possíveis dúvidas.
+                                Não é necessário ter experiência anterior
+                                com Pandas. Os conhecimentos prévios necessários
+                                são apresentados na próxima seção.
                             </p>
                         </article>
                     </div>
@@ -156,6 +150,58 @@ function Home() {
                             <p>
                                 Computador com internet, navegador, conta Google
                                 para utilizar o Colab e acesso a uma ferramenta de IA.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section className="section">
+                <div className="container">
+                    <span className="section-label">
+                        OBJETIVOS DE APRENDIZAGEM
+                    </span>
+
+                    <h2>O que você vai aprender?</h2>
+
+                    <p className="section-intro">
+                        Neste minicurso, você realizará uma exploração inicial
+                        de dados utilizando a biblioteca Pandas, enquanto
+                        desenvolve estratégias para aprender por meio da
+                        explicação e do diálogo com IA.
+                    </p>
+
+                    <div className="cards">
+                        <article className="card">
+                            <span className="card-icon">📊</span>
+
+                            <h3>Exploração de dados</h3>
+
+                            <p>
+                                Aprenda a observar a estrutura e as características
+                                iniciais de um conjunto de dados utilizando Pandas.
+                            </p>
+                        </article>
+
+                        <article className="card">
+                            <span className="card-icon">🐼</span>
+
+                            <h3>Pandas</h3>
+
+                            <p>
+                                Compreenda o propósito dos principais comandos
+                                utilizados durante a exploração inicial.
+                            </p>
+                        </article>
+
+                        <article className="card">
+                            <span className="card-icon">🤖</span>
+
+                            <h3>Diálogo com IA</h3>
+
+                            <p>
+                                Utilize a IA para fazer perguntas, testar sua
+                                compreensão e identificar possíveis dúvidas.
                             </p>
                         </article>
                     </div>

@@ -6,7 +6,7 @@ function IA() {
                     APRENDENDO COM IA
                 </span>
 
-                <h1>Aprendendo com IA vai além do Pandas</h1>
+                <h1>Aprender com IA vai além do Pandas</h1>
 
                 <p className="section-intro">
                     A estratégia que você experimentou neste minicurso pode ser
@@ -27,7 +27,8 @@ function IA() {
                         </div>
 
                         <span className="ai-arrow" aria-hidden="true">
-                            →
+                            <span className="arrow-desktop">→</span>
+                            <span className="arrow-mobile">↓</span>
                         </span>
 
                         <div className="ai-step">
@@ -39,7 +40,8 @@ function IA() {
                         </div>
 
                         <span className="ai-arrow" aria-hidden="true">
-                            →
+                            <span className="arrow-desktop">→</span>
+                            <span className="arrow-mobile">↓</span>
                         </span>
 
                         <div className="ai-step">

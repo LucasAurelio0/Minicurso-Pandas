@@ -1,8 +1,6 @@
-import NextStep from '../components/NextStep'
-
 function Aula() {
     return (
-        <main className="section">
+        <div className="section aula-section">
             <div className="container">
                 <span className="section-label">
                     AULA
@@ -46,12 +44,8 @@ function Aula() {
                     </div>
                 </section>
 
-                <NextStep
-                    label="Pratique o que aprendeu"
-                    to="/pratica"
-                />
             </div>
-        </main>
+        </div >
     )
 }
 

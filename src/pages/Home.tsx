@@ -1,9 +1,13 @@
-import { Link } from 'react-router-dom'
-import NextStep from '../components/NextStep'
+import Aula from './Aula'
+import Pratica from './Pratica'
+import IA from './IA'
+import Avaliacao from './Avaliacao'
+import Referencias from './Referencias'
 
 function Home() {
     return (
-        <main>
+        <main id="inicio">
+            {/* INÍCIO */}
             <section className="hero">
                 <div className="container hero-content">
                     <div className="hero-text">
@@ -27,35 +31,43 @@ function Home() {
                             e do diálogo com Inteligência Artificial.
                         </p>
 
-                        <Link to="/aula" className="primary-button">
+                        <a href="#aula" className="primary-button">
                             Começar o curso
-                        </Link>
+                        </a>
                     </div>
 
-                    <div className="hero-card">
-                        <div className="hero-card-icon">🐼</div>
+                    <div className="hero-cards">
+                        <article className="hero-card">
+                            <div className="hero-card-icon">🐼</div>
 
-                        <h2>Explorar</h2>
+                            <h2>Explorar</h2>
 
-                        <p>
-                            Conheça os dados e compreenda sua estrutura.
-                        </p>
+                            <p>
+                                Conheça os dados e compreenda sua estrutura.
+                            </p>
+                        </article>
 
-                        <div className="hero-card-icon">🤖</div>
+                        <article className="hero-card">
+                            <div className="hero-card-icon">🤖</div>
 
-                        <h2>Dialogar</h2>
+                            <h2>Dialogar</h2>
 
-                        <p>
-                            Utilize a IA para questionar e aprofundar sua compreensão.
-                        </p>
+                            <p>
+                                Utilize a IA para questionar e aprofundar sua
+                                compreensão.
+                            </p>
+                        </article>
 
-                        <div className="hero-card-icon">💡</div>
+                        <article className="hero-card">
+                            <div className="hero-card-icon">💡</div>
 
-                        <h2>Explicar</h2>
+                            <h2>Explicar</h2>
 
-                        <p>
-                            Expresse com suas próprias palavras o que você aprendeu.
-                        </p>
+                            <p>
+                                Expresse com suas próprias palavras o que você
+                                aprendeu.
+                            </p>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -71,9 +83,7 @@ function Home() {
                     <div className="cards">
                         <article className="card">
                             <span className="card-icon">👤</span>
-
                             <h3>Autor</h3>
-
                             <p>
                                 Lucas Aurélio dos Santos Vieira.
                             </p>
@@ -81,9 +91,7 @@ function Home() {
 
                         <article className="card">
                             <span className="card-icon">🎓</span>
-
                             <h3>Público-alvo</h3>
-
                             <p>
                                 Estudantes de Ciência da Computação e áreas
                                 relacionadas que possuam conhecimentos básicos
@@ -93,9 +101,7 @@ function Home() {
 
                         <article className="card">
                             <span className="card-icon">📚</span>
-
                             <h3>Experiência prévia</h3>
-
                             <p>
                                 Não é necessário ter experiência anterior
                                 com Pandas. Os conhecimentos prévios necessários
@@ -123,9 +129,7 @@ function Home() {
                     <div className="cards">
                         <article className="card">
                             <span className="card-icon">🐍</span>
-
                             <h3>Python básico</h3>
-
                             <p>
                                 Conhecimentos básicos de programação em Python,
                                 como variáveis, funções e estruturas de dados.
@@ -134,9 +138,7 @@ function Home() {
 
                         <article className="card">
                             <span className="card-icon">📊</span>
-
                             <h3>Estatística básica</h3>
-
                             <p>
                                 Familiaridade com conceitos estatísticos básicos
                                 será suficiente para acompanhar as atividades.
@@ -145,12 +147,11 @@ function Home() {
 
                         <article className="card">
                             <span className="card-icon">💻</span>
-
                             <h3>Recursos necessários</h3>
-
                             <p>
                                 Computador com internet, navegador, conta Google
-                                para utilizar o Colab e acesso a uma ferramenta de IA.
+                                para utilizar o Colab e acesso a uma ferramenta
+                                de IA.
                             </p>
                         </article>
                     </div>
@@ -175,9 +176,7 @@ function Home() {
                     <div className="cards">
                         <article className="card">
                             <span className="card-icon">📊</span>
-
                             <h3>Exploração de dados</h3>
-
                             <p>
                                 Aprenda a observar a estrutura e as características
                                 iniciais de um conjunto de dados utilizando Pandas.
@@ -186,9 +185,7 @@ function Home() {
 
                         <article className="card">
                             <span className="card-icon">🐼</span>
-
                             <h3>Pandas</h3>
-
                             <p>
                                 Compreenda o propósito dos principais comandos
                                 utilizados durante a exploração inicial.
@@ -197,9 +194,7 @@ function Home() {
 
                         <article className="card">
                             <span className="card-icon">🤖</span>
-
                             <h3>Diálogo com IA</h3>
-
                             <p>
                                 Utilize a IA para fazer perguntas, testar sua
                                 compreensão e identificar possíveis dúvidas.
@@ -220,10 +215,8 @@ function Home() {
                     <div className="steps">
                         <div className="step">
                             <span>01</span>
-
                             <div>
                                 <h3>Assista</h3>
-
                                 <p>
                                     Acompanhe a videoaula e conheça os conceitos
                                     apresentados.
@@ -233,10 +226,8 @@ function Home() {
 
                         <div className="step">
                             <span>02</span>
-
                             <div>
                                 <h3>Explore</h3>
-
                                 <p>
                                     Utilize Pandas para realizar uma exploração
                                     inicial do conjunto de dados.
@@ -246,10 +237,8 @@ function Home() {
 
                         <div className="step">
                             <span>03</span>
-
                             <div>
                                 <h3>Dialogue</h3>
-
                                 <p>
                                     Faça perguntas à IA e compare as respostas
                                     com sua própria compreensão.
@@ -259,10 +248,8 @@ function Home() {
 
                         <div className="step">
                             <span>04</span>
-
                             <div>
                                 <h3>Explique</h3>
-
                                 <p>
                                     Explique os comandos com suas próprias palavras
                                     e verifique as informações em fontes confiáveis.
@@ -273,10 +260,30 @@ function Home() {
                 </div>
             </section>
 
-            <NextStep
-                label="Assistir a aula"
-                to="/aula"
-            />
+            {/* AULA */}
+            <section id="aula">
+                <Aula />
+            </section>
+
+            {/* PRÁTICA */}
+            <section id="pratica">
+                <Pratica />
+            </section>
+
+            {/* APRENDENDO COM IA */}
+            <section id="ia">
+                <IA />
+            </section>
+
+            {/* AVALIAÇÃO */}
+            <section id="avaliacao">
+                <Avaliacao />
+            </section>
+
+            {/* REFERÊNCIAS */}
+            <section id="referencias">
+                <Referencias />
+            </section>
         </main>
     )
 }

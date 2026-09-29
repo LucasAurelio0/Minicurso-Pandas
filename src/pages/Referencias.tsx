@@ -1,6 +1,6 @@
 function Referencias() {
     return (
-        <main className="section">
+        <div className="section referencias-page-section">
             <div className="container">
                 <span className="section-label">
                     REFERÊNCIAS
@@ -91,7 +91,7 @@ function Referencias() {
                     </p>
                 </section>
             </div>
-        </main>
+        </div>
     )
 }
 

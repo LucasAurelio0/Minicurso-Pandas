@@ -1,8 +1,6 @@
-import NextStep from '../components/NextStep'
-
 function Pratica() {
     return (
-        <main className="section">
+        <div className="section pratica-section">
             <div className="container">
                 <span className="section-label">
                     PRÁTICA
@@ -55,7 +53,7 @@ function Pratica() {
                     </p>
 
                     <a
-                        href="https://colab.research.google.com/github/LucasAurelio0/Minicurso-Pandas/blob/main/public/notebooks/Exercicio_Exploracao_Pandas_IA.ipynb"
+                        href="https://colab.research.google.com/github/LucasAurelio0/Minicurso-Pandas/blob/div/public/notebooks/Exercicio_Exploracao_Pandas_IA.ipynb"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="primary-button"
@@ -64,12 +62,7 @@ function Pratica() {
                     </a>
                 </section>
             </div>
-
-            <NextStep
-                label="Resumo do Método"
-                to="/ia"
-            />
-        </main>
+        </div>
     )
 }
 

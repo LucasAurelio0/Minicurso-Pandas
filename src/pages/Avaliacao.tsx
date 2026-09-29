@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import NextStep from '../components/NextStep'
+import { useEffect, useRef, useState } from 'react'
 
 type Question = {
     question: string
@@ -20,147 +19,148 @@ const STORAGE_KEY = 'minicurso-pandas-best-result'
 
 const questions: Question[] = [
     {
-        question: 'Qual é um dos principais objetivos de uma exploração inicial de dados?',
+        question:
+            'Qual é o principal objetivo da exploração inicial de um conjunto de dados?',
         options: [
-            'Criar um modelo de inteligência artificial imediatamente.',
-            'Compreender a estrutura, características e possíveis problemas dos dados.',
-            'Excluir automaticamente todas as linhas que possuem valores ausentes.',
-            'Transformar todas as colunas em valores numéricos.',
+            'Criar imediatamente um modelo de Machine Learning.',
+            'Conhecer a estrutura, os tipos e algumas características dos dados.',
+            'Excluir todas as colunas que possuem valores ausentes.',
+            'Transformar todas as variáveis em números.',
         ],
         correctAnswer: 1,
         feedback: [
-            'A exploração inicial acontece antes disso. Primeiro é importante compreender os dados que estão sendo analisados.',
-            'Isso! A exploração inicial ajuda a compreender a estrutura dos dados, identificar padrões e perceber possíveis problemas.',
-            'Valores ausentes precisam ser analisados antes de decidir como tratá-los. Excluir automaticamente os registros pode causar perda de informação.',
-            'Nem todas as colunas devem ser numéricas. Dados textuais e categóricos também podem ser importantes para a análise.',
+            'A exploração inicial acontece antes da construção de modelos e serve para conhecer os dados.',
+            'Correto! A exploração inicial permite compreender a estrutura, os tipos, os valores e possíveis problemas presentes nos dados.',
+            'Valores ausentes não devem ser simplesmente excluídos sem antes compreender por que estão ausentes.',
+            'Nem todas as variáveis precisam ou devem ser transformadas em números.',
         ],
         explanation:
-            'A exploração inicial permite conhecer o conjunto de dados antes de tomar decisões sobre limpeza, transformação ou análise.',
+            'A exploração inicial ajuda a compreender o conjunto de dados antes de realizar análises mais avançadas ou construir modelos.',
     },
-
     {
-        question: 'O que o comando df.head() permite observar?',
+        question:
+            'O que podemos descobrir utilizando o atributo `shape` de um DataFrame?',
         options: [
-            'As primeiras linhas do DataFrame.',
-            'A quantidade de valores ausentes de cada coluna.',
-            'A média de todas as colunas numéricas.',
-            'Apenas os nomes das colunas.',
+            'Os nomes de todas as colunas.',
+            'A quantidade de valores ausentes.',
+            'A quantidade de linhas e colunas.',
+            'A média de cada coluna numérica.',
+        ],
+        correctAnswer: 2,
+        feedback: [
+            'Os nomes das colunas podem ser observados utilizando, por exemplo, `columns`.',
+            'A quantidade de valores ausentes pode ser investigada com outros comandos, como `isna()`.',
+            'Correto! O atributo `shape` informa a quantidade de linhas e colunas do DataFrame.',
+            'A média das colunas numéricas pode ser obtida por meio de métodos estatísticos, como `mean()`.',
+        ],
+        explanation:
+            'O atributo `shape` retorna uma tupla no formato `(linhas, colunas)`, permitindo conhecer rapidamente as dimensões do DataFrame.',
+    },
+    {
+        question:
+            'Para que o comando `df.head()` é utilizado durante uma exploração inicial?',
+        options: [
+            'Para visualizar as primeiras linhas do DataFrame.',
+            'Para excluir as primeiras linhas do DataFrame.',
+            'Para calcular a média das colunas.',
+            'Para descobrir apenas os valores ausentes.',
         ],
         correctAnswer: 0,
         feedback: [
-            'Correto! Por padrão, df.head() apresenta as primeiras linhas do DataFrame.',
-            'Essa não é a função principal de df.head(). Para investigar valores ausentes, existem outras abordagens.',
-            'A média dos valores não é calculada por df.head().',
-            'Os nomes das colunas podem aparecer junto com os dados, mas o objetivo é visualizar as primeiras linhas.',
+            'Correto! `head()` permite visualizar as primeiras linhas do DataFrame.',
+            'O comando `head()` apenas visualiza os dados; ele não exclui linhas.',
+            'O cálculo de médias pode ser realizado com métodos estatísticos, como `mean()`.',
+            'Para investigar valores ausentes, podemos utilizar comandos como `isna()`.',
         ],
         explanation:
-            'Visualizar as primeiras linhas é uma forma rápida de observar como os dados estão organizados e ter uma primeira impressão do conteúdo.',
+            'Visualizar algumas linhas é uma forma simples de começar a entender como os dados estão organizados.',
     },
-
     {
-        question: 'Por que utilizar df.info() durante a exploração inicial?',
+        question:
+            'Por que observar os tipos das colunas é importante durante a exploração inicial?',
         options: [
-            'Para criar automaticamente gráficos para todas as colunas.',
-            'Para excluir colunas que possuem muitos valores ausentes.',
-            'Para obter informações sobre a estrutura do DataFrame, incluindo tipos de dados e valores não nulos.',
-            'Para ordenar todas as linhas do DataFrame.',
-        ],
-        correctAnswer: 2,
-        feedback: [
-            'df.info() não cria gráficos. Ele apresenta informações estruturais sobre o DataFrame.',
-            'O método informa características dos dados, mas não decide nem executa automaticamente a exclusão de colunas.',
-            'Correto! df.info() fornece informações importantes sobre a estrutura do DataFrame, como colunas, tipos e valores não nulos.',
-            'A ordenação dos dados é outra operação e não é realizada por df.info().',
-        ],
-        explanation:
-            'Conhecer os tipos das colunas e a quantidade de valores não nulos ajuda a identificar como os dados podem ser trabalhados posteriormente.',
-    },
-
-    {
-        question: 'Ao encontrar uma coluna com valores ausentes, qual atitude é mais adequada?',
-        options: [
-            'Sempre excluir imediatamente todas as linhas com valores ausentes.',
-            'Sempre substituir os valores ausentes por zero.',
-            'Ignorar o problema porque o Pandas consegue resolver automaticamente.',
-            'Investigar o contexto dos dados antes de decidir como tratar os valores ausentes.',
-        ],
-        correctAnswer: 3,
-        feedback: [
-            'Excluir linhas pode ser adequado em alguns casos, mas não deve ser uma decisão automática.',
-            'Zero possui um significado próprio e pode representar uma informação incorreta quando usado para substituir um valor ausente.',
-            'O tratamento depende do contexto e das características do conjunto de dados.',
-            'Correto! Antes de tratar valores ausentes, é necessário entender o que eles representam e quais consequências cada estratégia pode trazer.',
-        ],
-        explanation:
-            'O tratamento de dados não deve ser apenas mecânico. Uma decisão adequada depende do significado dos dados e do objetivo da análise.',
-    },
-
-    {
-        question: 'Qual destas situações representa melhor a proposta de aprendizagem com IA apresentada no minicurso?',
-        options: [
-            'Copiar a primeira resposta da IA e utilizá-la sem verificar.',
-            'Pedir para a IA resolver toda a atividade antes de tentar compreender o problema.',
-            'Explicar o que você entendeu, conversar com a IA, questionar a resposta e revisar sua compreensão.',
-            'Utilizar a IA somente quando a atividade estiver completamente pronta.',
-        ],
-        correctAnswer: 2,
-        feedback: [
-            'A proposta não é aceitar respostas automaticamente. É importante compreender e verificar as informações.',
-            'Resolver tudo antes de tentar compreender reduz a oportunidade de utilizar a IA como parte do processo de aprendizagem.',
-            'Isso! A ideia é utilizar a IA como interlocutora para explicar, questionar, identificar lacunas e revisar a própria compreensão.',
-            'A IA pode participar de diferentes momentos do processo de aprendizagem, não apenas no final.',
-        ],
-        explanation:
-            'O minicurso propõe uma relação ativa com a IA: o estudante formula explicações, faz perguntas, analisa as respostas e revisa seu entendimento.',
-    },
-
-    {
-        question: 'Você executou df.describe() e recebeu resultados estatísticos. Qual seria uma boa atitude?',
-        options: [
-            'Aceitar os resultados sem verificar porque o Pandas já interpretou os dados.',
-            'Tentar compreender o que cada estatística representa e relacioná-la às características dos dados.',
-            'Excluir todas as colunas que não aparecem no resultado.',
-            'Considerar que os resultados estatísticos são sempre suficientes para compreender todo o conjunto de dados.',
+            'Porque todas as colunas precisam ter exatamente o mesmo tipo.',
+            'Porque permite verificar se os dados estão representados de maneira adequada.',
+            'Porque transforma automaticamente todas as colunas em números.',
+            'Porque elimina valores ausentes.',
         ],
         correctAnswer: 1,
         feedback: [
-            'Ferramentas podem produzir resultados corretamente sem que o usuário compreenda o que eles significam. A interpretação continua sendo importante.',
-            'Correto! O objetivo é interpretar os resultados e relacioná-los ao contexto dos dados.',
-            'A ausência de uma coluna nesse resultado não significa que ela deva ser excluída.',
-            'Estatísticas descritivas são úteis, mas representam apenas uma parte da exploração dos dados.',
+            'Um DataFrame pode possuir diferentes tipos de dados, como números, textos e datas.',
+            'Correto! Verificar os tipos ajuda a identificar se os dados estão representados de maneira adequada para a análise.',
+            'Observar os tipos não transforma automaticamente as colunas.',
+            'A verificação dos tipos não elimina valores ausentes.',
         ],
         explanation:
-            'A exploração não termina quando um comando é executado. É necessário interpretar o resultado e relacioná-lo ao problema analisado.',
+            'Uma coluna que deveria representar números, por exemplo, pode estar armazenada como texto. Identificar situações assim é importante antes de continuar a análise.',
     },
-
     {
-        question: 'Qual comportamento demonstra melhor uma utilização crítica da IA durante os estudos?',
+        question:
+            'Qual é uma boa forma de utilizar uma IA durante a aprendizagem de Pandas?',
         options: [
-            'Usar a IA como única fonte de informação.',
-            'Evitar questionar respostas para não interromper o fluxo de estudo.',
-            'Comparar as respostas da IA com seu próprio raciocínio e, quando necessário, consultar fontes confiáveis.',
-            'Pedir respostas cada vez mais curtas para terminar a atividade rapidamente.',
+            'Pedir que a IA faça toda a atividade sem tentar compreender os comandos.',
+            'Copiar qualquer resposta fornecida pela IA sem verificar.',
+            'Explicar o que você entendeu e utilizar a IA para questionar e aprofundar sua compreensão.',
+            'Evitar fazer perguntas para a IA durante o estudo.',
         ],
         correctAnswer: 2,
         feedback: [
-            'A IA pode apresentar informações incorretas ou incompletas. Por isso, não deve ser tratada como única fonte.',
-            'Questionar é justamente uma das estratégias utilizadas para aprofundar a aprendizagem.',
-            'Correto! Comparar, questionar e verificar informações ajuda a manter o estudante ativo no processo de aprendizagem.',
-            'Ser objetivo pode ser útil, mas terminar rapidamente não significa necessariamente compreender melhor o conteúdo.',
+            'O objetivo da estratégia do minicurso é utilizar a IA como apoio à compreensão, e não apenas como executora da atividade.',
+            'As respostas da IA podem conter erros e devem ser analisadas e verificadas.',
+            'Correto! Explicar, questionar e revisar transforma a IA em uma interlocutora do processo de aprendizagem.',
+            'Fazer perguntas é justamente uma das formas propostas para utilizar a IA durante a aprendizagem.',
         ],
         explanation:
-            'O diálogo com IA funciona melhor como parte de um processo de reflexão e verificação, e não como substituição do raciocínio do estudante.',
+            'A proposta é tentar compreender primeiro, explicar com suas próprias palavras e então utilizar a IA para questionar, esclarecer e aprofundar o conteúdo.',
+    },
+    {
+        question:
+            'Depois de receber uma explicação da IA sobre um comando do Pandas, qual atitude é mais adequada?',
+        options: [
+            'Aceitar a resposta automaticamente.',
+            'Ignorar a resposta e continuar a atividade.',
+            'Verificar a explicação e comparar com fontes confiáveis.',
+            'Pedir para a IA responder novamente até obter uma resposta diferente.',
+        ],
+        correctAnswer: 2,
+        feedback: [
+            'Respostas geradas por IA não devem ser aceitas automaticamente.',
+            'Ignorar a resposta elimina uma oportunidade de utilizar o diálogo para aprofundar a compreensão.',
+            'Correto! Verificar a informação em fontes confiáveis ajuda a identificar possíveis erros e consolidar o aprendizado.',
+            'Obter outra resposta da mesma IA não garante que a informação esteja correta.',
+        ],
+        explanation:
+            'A IA pode ser útil para explicar e questionar, mas suas respostas precisam ser analisadas e, quando necessário, verificadas em documentação e outras fontes confiáveis.',
+    },
+    {
+        question:
+            'Qual destas situações representa melhor a estratégia de aprendizagem proposta no minicurso?',
+        options: [
+            'Executar todos os comandos sem tentar compreender o que fazem.',
+            'Explicar o que entendeu, conversar com a IA, identificar dúvidas e revisar sua explicação.',
+            'Utilizar a IA para responder todas as questões antes de tentar resolvê-las.',
+            'Memorizar os comandos do Pandas sem compreender sua finalidade.',
+        ],
+        correctAnswer: 1,
+        feedback: [
+            'Executar comandos sem compreender seu propósito não corresponde à estratégia apresentada.',
+            'Correto! A estratégia combina explicação, diálogo, questionamento e revisão para aprofundar a compreensão.',
+            'A proposta é utilizar a IA como apoio ao processo de aprendizagem, e não como substituta da tentativa do estudante.',
+            'Memorizar comandos não garante compreensão sobre quando ou por que utilizá-los.',
+        ],
+        explanation:
+            'A estratégia pode ser resumida como: tentar compreender, explicar, dialogar com a IA, questionar, revisar e verificar.',
     },
 ]
 
 function loadBestResult(): BestResult | null {
-    const savedResult = localStorage.getItem(STORAGE_KEY)
-
-    if (!savedResult) {
-        return null
-    }
-
     try {
+        const savedResult = localStorage.getItem(STORAGE_KEY)
+
+        if (!savedResult) {
+            return null
+        }
+
         return JSON.parse(savedResult) as BestResult
     } catch {
         return null
@@ -178,11 +178,49 @@ function Avaliacao() {
         loadBestResult(),
     )
 
+    const feedbackRef = useRef<HTMLDivElement>(null)
+    const questionRef = useRef<HTMLDivElement>(null)
+    const resultRef = useRef<HTMLDivElement>(null)
+
     const question = questions[currentQuestion]
     const answered = selectedAnswer !== null
     const isCorrect = selectedAnswer === question.correctAnswer
-
     const xp = score * 100
+
+    /*
+     * Depois que o aluno responde, leva automaticamente
+     * para a área onde aparece a justificativa.
+     */
+    useEffect(() => {
+        if (answered && feedbackRef.current) {
+            feedbackRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+            })
+        }
+    }, [answered])
+
+    /*
+     * Quando uma nova pergunta é carregada, leva o aluno
+     * automaticamente para o início da questão.
+     */
+    useEffect(() => {
+        if (currentQuestion > 0 && !answered && questionRef.current) {
+            questionRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            })
+        }
+    }, [currentQuestion, answered])
+
+    useEffect(() => {
+        if (finished && resultRef.current) {
+            resultRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            })
+        }
+    }, [finished])
 
     function handleAnswer(index: number) {
         if (answered) {
@@ -206,18 +244,36 @@ function Avaliacao() {
     }
 
     function handleNext() {
+        if (!answered) {
+            return
+        }
+
         if (currentQuestion === questions.length - 1) {
-            const finalScore = score
+            /*
+             * Como o último clique em uma alternativa atualiza
+             * o estado de forma assíncrona, calculamos o resultado
+             * final considerando também a resposta atual.
+             */
+            const finalScore = score + (isCorrect ? 1 : 0)
+
+            const finalStreak = isCorrect ? streak + 1 : 0
+
             const finalPercentage = Math.round(
                 (finalScore / questions.length) * 100,
             )
+
             const finalXp = finalScore * 100
+
+            const finalBestStreak = Math.max(
+                bestStreak,
+                finalStreak,
+            )
 
             const newResult: BestResult = {
                 score: finalScore,
                 xp: finalXp,
                 percentage: finalPercentage,
-                bestStreak,
+                bestStreak: finalBestStreak,
             }
 
             const previousBest = loadBestResult()
@@ -225,7 +281,7 @@ function Avaliacao() {
             const isNewRecord =
                 !previousBest ||
                 finalXp > previousBest.xp ||
-                bestStreak > previousBest.bestStreak
+                finalBestStreak > previousBest.bestStreak
 
             if (isNewRecord) {
                 localStorage.setItem(
@@ -238,7 +294,10 @@ function Avaliacao() {
                 setBestResult(previousBest)
             }
 
+            setScore(finalScore)
+            setBestStreak(finalBestStreak)
             setFinished(true)
+
             return
         }
 
@@ -253,6 +312,15 @@ function Avaliacao() {
         setStreak(0)
         setBestStreak(0)
         setFinished(false)
+
+        setTimeout(() => {
+            document
+                .getElementById('avaliacao')
+                ?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                })
+        }, 50)
     }
 
     function handleClearRecord() {
@@ -260,124 +328,96 @@ function Avaliacao() {
         setBestResult(null)
     }
 
-    function getResultMessage() {
-        const percentage = (score / questions.length) * 100
-
-        if (percentage === 100) {
-            return {
-                title: 'Missão concluída! 🏆',
-                text: 'Você demonstrou domínio dos principais conceitos trabalhados no minicurso.',
-            }
-        }
-
-        if (percentage >= 70) {
-            return {
-                title: 'Muito bem! 🚀',
-                text: 'Você apresentou uma boa compreensão dos conceitos. Revise os pontos que geraram dúvidas.',
-            }
-        }
-
-        if (percentage >= 50) {
-            return {
-                title: 'Quase lá! 💡',
-                text: 'Você já possui alguns conhecimentos importantes. Vale a pena revisar os pontos que geraram dúvidas.',
-            }
-        }
-
-        return {
-            title: 'Hora de explorar novamente 🔎',
-            text: 'Revisar a aula e refazer a atividade prática pode ajudar a consolidar os conceitos.',
-        }
-    }
-
     if (finished) {
-        const result = getResultMessage()
-        const percentage = Math.round((score / questions.length) * 100)
+        const finalPercentage = Math.round(
+            (score / questions.length) * 100,
+        )
+
+        const finalXp = score * 100
 
         const isNewRecord =
             bestResult !== null &&
-            xp >= bestResult.xp &&
+            finalXp >= bestResult.xp &&
             bestStreak >= bestResult.bestStreak
 
         return (
-            <main className="section">
+            <div className="section avaliacao-section">
                 <div className="container">
-                    <div className="quiz-result">
-                        <span className="result-icon">
-                            {percentage === 100 ? '🏆' : '🎯'}
-                        </span>
+                    <span className="section-label">
+                        AVALIAÇÃO
+                    </span>
 
-                        <span className="section-label">
-                            RESULTADO
-                        </span>
+                    <div
+                        ref={resultRef}
+                        className="quiz-result"
+                    >
+                        <div className="result-icon">
+                            {finalPercentage >= 70 ? '🎉' : '📚'}
+                        </div>
 
-                        <h1>{result.title}</h1>
+                        <div className="result-text">
+                            <h1>
+                                {finalPercentage >= 70
+                                    ? 'Avaliação concluída!'
+                                    : 'Avaliação concluída'}
+                            </h1>
 
-                        <p className="result-text">
-                            {result.text}
-                        </p>
+                            <p>
+                                Você concluiu todas as questões do minicurso.
+                            </p>
+                        </div>
 
                         {isNewRecord && (
                             <div className="new-record">
-                                🎉 Novo recorde!
+                                🏆 Novo recorde!
                             </div>
                         )}
 
                         <div className="result-stats">
                             <div className="result-stat">
-                                <strong>
-                                    {score}/{questions.length}
-                                </strong>
-                                <span>Acertos</span>
+                                <strong>{score}</strong>
+                                <span>de {questions.length}</span>
+                                <small>Acertos</small>
                             </div>
 
                             <div className="result-stat">
-                                <strong>{percentage}%</strong>
-                                <span>Aproveitamento</span>
+                                <strong>{finalPercentage}%</strong>
+                                <span>aproveitamento</span>
+                                <small>Resultado</small>
                             </div>
 
                             <div className="result-stat">
-                                <strong>{xp} XP</strong>
-                                <span>Pontuação</span>
+                                <strong>{finalXp}</strong>
+                                <span>XP</span>
+                                <small>Pontuação</small>
                             </div>
 
                             <div className="result-stat">
-                                <strong>{bestStreak} 🔥</strong>
-                                <span>Sequência</span>
+                                <strong>{bestStreak}</strong>
+                                <span>seguidas</span>
+                                <small>Melhor sequência</small>
                             </div>
                         </div>
 
                         {bestResult && (
                             <div className="personal-record">
-                                <div>
-                                    <span>🏆</span>
-                                    <div>
-                                        <strong>Seu melhor resultado</strong>
-                                        <p>
-                                            {bestResult.score}/{questions.length} acertos ·{' '}
-                                            {bestResult.percentage}% · {bestResult.xp} XP
-                                        </p>
-                                    </div>
-                                </div>
+                                <h2>Seu melhor resultado</h2>
 
-                                <button
-                                    type="button"
-                                    onClick={handleClearRecord}
-                                >
-                                    Apagar recorde
-                                </button>
+                                <p>
+                                    {bestResult.score} de{' '}
+                                    {questions.length} acertos ·{' '}
+                                    {bestResult.percentage}% ·{' '}
+                                    {bestResult.xp} XP · sequência de{' '}
+                                    {bestResult.bestStreak}
+                                </p>
                             </div>
                         )}
 
-                        <div className="result-message">
-                            <strong>Continue aprendendo!</strong>
-
-                            <p>
-                                O objetivo da avaliação não é apenas verificar respostas
-                                corretas, mas ajudar você a identificar o que já compreendeu
-                                e o que pode ser revisado.
-                            </p>
-                        </div>
+                        <p className="result-message">
+                            {finalPercentage >= 70
+                                ? 'Você demonstrou uma boa compreensão dos conceitos trabalhados no minicurso.'
+                                : 'Revise os conteúdos da aula e tente novamente. O objetivo é compreender os conceitos, não apenas acertar as questões.'}
+                        </p>
 
                         <div className="result-actions">
                             <button
@@ -389,35 +429,46 @@ function Avaliacao() {
                             </button>
 
                             <a
-                                href="/"
+                                href="#inicio"
                                 className="secondary-button"
                             >
                                 Voltar ao início
                             </a>
                         </div>
+
+                        {bestResult && (
+                            <button
+                                type="button"
+                                className="clear-record-button"
+                                onClick={handleClearRecord}
+                            >
+                                Limpar meu recorde
+                            </button>
+                        )}
                     </div>
                 </div>
-            </main>
+            </div>
         )
     }
 
-    const progress = ((currentQuestion + 1) / questions.length) * 100
+    const progress =
+        ((currentQuestion + 1) / questions.length) * 100
 
     return (
-        <main className="section">
+        <div className="section avaliacao-section">
             <div className="container">
                 <div className="quiz-header">
                     <span className="section-label">
-                        DESAFIO FINAL
+                        AVALIAÇÃO
                     </span>
 
-                    <h1>
-                        Hora de colocar o que você aprendeu em prática!
-                    </h1>
+                    <h1>Teste sua compreensão</h1>
 
                     <p className="section-intro">
-                        Responda às questões e use o feedback para refletir
-                        sobre suas respostas.
+                        Responda às questões abaixo para verificar sua
+                        compreensão dos conteúdos apresentados no minicurso.
+                        Depois de escolher uma alternativa, leia a
+                        justificativa antes de continuar.
                     </p>
                 </div>
 
@@ -426,160 +477,195 @@ function Avaliacao() {
                         <span>🏆</span>
 
                         <div>
-                            <strong>Seu melhor resultado</strong>
+                            <strong>
+                                Seu melhor resultado
+                            </strong>
 
                             <p>
-                                {bestResult.score}/{questions.length} acertos ·{' '}
-                                {bestResult.percentage}% · {bestResult.xp} XP
+                                {bestResult.score} de{' '}
+                                {questions.length} acertos ·{' '}
+                                {bestResult.percentage}% ·{' '}
+                                {bestResult.xp} XP
                             </p>
                         </div>
                     </div>
                 )}
 
-                <section className="quiz-game">
+                <div className="quiz-game">
                     <div className="quiz-topbar">
                         <div className="quiz-progress-info">
+                            <strong>
+                                Questão {currentQuestion + 1}
+                            </strong>
+
                             <span>
-                                Questão {currentQuestion + 1} de {questions.length}
+                                de {questions.length}
                             </span>
-
-                            <span>{xp} XP</span>
-                        </div>
-
-                        <div
-                            className="progress-bar"
-                            aria-label={`Progresso: ${currentQuestion + 1} de ${questions.length}`}
-                        >
-                            <div
-                                className="progress-bar-fill"
-                                style={{ width: `${progress}%` }}
-                            />
                         </div>
 
                         <div className="quiz-streak">
-                            <span>
-                                🔥 Sequência: <strong>{streak}</strong>
-                            </span>
-
-                            <span>
-                                Pontos: <strong>{score}</strong>
-                            </span>
+                            🔥 {streak}
                         </div>
                     </div>
 
-                    <div className="quiz-question">
+                    <div
+                        className="progress-bar"
+                        aria-label={`Progresso: questão ${currentQuestion + 1
+                            } de ${questions.length}`}
+                    >
+                        <div
+                            className="progress-bar-fill"
+                            style={{
+                                width: `${progress}%`,
+                            }}
+                        />
+                    </div>
+
+                    <div
+                        ref={questionRef}
+                        className="quiz-question"
+                    >
                         <span className="question-number">
-                            QUESTÃO {String(currentQuestion + 1).padStart(2, '0')}
+                            {String(
+                                currentQuestion + 1,
+                            ).padStart(2, '0')}
                         </span>
 
                         <h2>{question.question}</h2>
 
                         <div className="quiz-options">
-                            {question.options.map((option, index) => {
-                                let optionClass = 'quiz-option'
+                            {question.options.map(
+                                (option, index) => {
+                                    const isSelected =
+                                        selectedAnswer === index
 
-                                if (answered) {
-                                    if (index === question.correctAnswer) {
-                                        optionClass += ' correct'
-                                    } else if (index === selectedAnswer) {
-                                        optionClass += ' incorrect'
-                                    } else {
-                                        optionClass += ' disabled'
+                                    const isCorrectOption =
+                                        index ===
+                                        question.correctAnswer
+
+                                    let optionClass =
+                                        'quiz-option'
+
+                                    if (answered) {
+                                        if (
+                                            isCorrectOption
+                                        ) {
+                                            optionClass +=
+                                                ' correct'
+                                        } else if (
+                                            isSelected
+                                        ) {
+                                            optionClass +=
+                                                ' incorrect'
+                                        } else {
+                                            optionClass +=
+                                                ' disabled'
+                                        }
                                     }
-                                }
 
-                                return (
-                                    <button
-                                        key={option}
-                                        type="button"
-                                        className={optionClass}
-                                        onClick={() => handleAnswer(index)}
-                                        disabled={answered}
-                                    >
-                                        <span className="option-letter">
-                                            {String.fromCharCode(65 + index)}
-                                        </span>
+                                    return (
+                                        <button
+                                            key={option}
+                                            type="button"
+                                            className={optionClass}
+                                            onClick={() =>
+                                                handleAnswer(
+                                                    index,
+                                                )
+                                            }
+                                            disabled={answered}
+                                        >
+                                            <span className="option-letter">
+                                                {String.fromCharCode(
+                                                    65 + index,
+                                                )}
+                                            </span>
 
-                                        <span className="option-text">
-                                            {option}
-                                        </span>
+                                            <span className="option-text">
+                                                {option}
+                                            </span>
 
-                                        {answered &&
-                                            index === question.correctAnswer && (
-                                                <span
-                                                    className="option-icon"
-                                                    aria-label="Resposta correta"
-                                                >
-                                                    ✓
-                                                </span>
-                                            )}
+                                            {answered &&
+                                                isCorrectOption && (
+                                                    <span
+                                                        className="option-icon"
+                                                        aria-hidden="true"
+                                                    >
+                                                        ✓
+                                                    </span>
+                                                )}
 
-                                        {answered &&
-                                            index === selectedAnswer &&
-                                            index !== question.correctAnswer && (
-                                                <span
-                                                    className="option-icon"
-                                                    aria-label="Resposta incorreta"
-                                                >
-                                                    ×
-                                                </span>
-                                            )}
-                                    </button>
-                                )
-                            })}
+                                            {answered &&
+                                                isSelected &&
+                                                !isCorrectOption && (
+                                                    <span
+                                                        className="option-icon"
+                                                        aria-hidden="true"
+                                                    >
+                                                        ✕
+                                                    </span>
+                                                )}
+                                        </button>
+                                    )
+                                },
+                            )}
                         </div>
+                    </div>
 
-                        {answered && (
-                            <div
-                                className={`quiz-feedback ${isCorrect
+                    {answered && (
+                        <div
+                            ref={feedbackRef}
+                            className={`quiz-feedback ${isCorrect
                                     ? 'feedback-correct'
                                     : 'feedback-incorrect'
-                                    }`}
-                                role="status"
-                                aria-live="polite"
-                            >
-                                <div className="feedback-heading">
-                                    <span className="feedback-icon">
-                                        {isCorrect ? '✓' : '💡'}
-                                    </span>
+                                }`}
+                            role="status"
+                            aria-live="polite"
+                            tabIndex={-1}
+                        >
+                            <div className="feedback-heading">
+                                <span className="feedback-icon">
+                                    {isCorrect ? '✓' : '✕'}
+                                </span>
 
-                                    <strong>
-                                        {isCorrect
-                                            ? 'Resposta correta!'
-                                            : 'Vamos analisar essa resposta.'}
-                                    </strong>
-                                </div>
+                                <strong>
+                                    {isCorrect
+                                        ? 'Resposta correta!'
+                                        : 'Resposta incorreta'}
+                                </strong>
+                            </div>
+
+                            <p>
+                                {question.feedback[
+                                    selectedAnswer
+                                ]}
+                            </p>
+
+                            <div className="feedback-explanation">
+                                <strong>
+                                    Por que isso importa?
+                                </strong>
 
                                 <p>
-                                    {question.feedback[selectedAnswer]}
+                                    {question.explanation}
                                 </p>
-
-                                <div className="feedback-explanation">
-                                    <strong>Por que isso importa?</strong>
-
-                                    <p>{question.explanation}</p>
-                                </div>
-
-                                <button
-                                    type="button"
-                                    className="primary-button feedback-button"
-                                    onClick={handleNext}
-                                >
-                                    {currentQuestion === questions.length - 1
-                                        ? 'Ver resultado'
-                                        : 'Próxima questão →'}
-                                </button>
                             </div>
-                        )}
-                    </div>
-                </section>
-            </div>
 
-            <NextStep
-                label="Referências e materiais de apoio"
-                to="/referencias"
-            />
-        </main>
+                            <button
+                                type="button"
+                                className="feedback-button"
+                                onClick={handleNext}
+                            >
+                                {currentQuestion ===
+                                    questions.length - 1
+                                    ? 'Ver resultado'
+                                    : 'Próxima questão'}
+                            </button>
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
     )
 }
 

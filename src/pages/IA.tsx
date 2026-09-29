@@ -1,8 +1,6 @@
-import NextStep from '../components/NextStep'
-
 function IA() {
     return (
-        <main className="section">
+        <div className="section ia-section">
             <div className="container">
                 <span className="section-label">
                     APRENDENDO COM IA
@@ -133,11 +131,35 @@ function IA() {
 
                     <div className="challenge-flow">
                         <span>Explique</span>
-                        <span aria-hidden="true">→</span>
+
+                        <span
+                            className="challenge-arrow"
+                            aria-hidden="true"
+                        >
+                            <span className="arrow-desktop">→</span>
+                            <span className="arrow-mobile">↓</span>
+                        </span>
+
                         <span>Converse</span>
-                        <span aria-hidden="true">→</span>
+
+                        <span
+                            className="challenge-arrow"
+                            aria-hidden="true"
+                        >
+                            <span className="arrow-desktop">→</span>
+                            <span className="arrow-mobile">↓</span>
+                        </span>
+
                         <span>Questione</span>
-                        <span aria-hidden="true">→</span>
+
+                        <span
+                            className="challenge-arrow"
+                            aria-hidden="true"
+                        >
+                            <span className="arrow-desktop">→</span>
+                            <span className="arrow-mobile">↓</span>
+                        </span>
+
                         <span>Revise</span>
                     </div>
 
@@ -149,11 +171,7 @@ function IA() {
                 </section>
             </div>
 
-            <NextStep
-                label="Avaliação"
-                to="/avaliacao"
-            />
-        </main>
+        </div>
     )
 }
 

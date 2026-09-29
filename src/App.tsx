@@ -2,13 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-
 import Home from './pages/Home'
-import Aula from './pages/Aula'
-import Pratica from './pages/Pratica'
-import IA from './pages/IA'
-import Avaliacao from './pages/Avaliacao'
-import Referencias from './pages/Referencias'
 
 function App() {
   return (
@@ -18,11 +12,6 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/aula" element={<Aula />} />
-          <Route path="/pratica" element={<Pratica />} />
-          <Route path="/ia" element={<IA />} />
-          <Route path="/avaliacao" element={<Avaliacao />} />
-          <Route path="/referencias" element={<Referencias />} />
         </Routes>
 
         <Footer />

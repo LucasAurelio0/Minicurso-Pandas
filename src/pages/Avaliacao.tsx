@@ -248,25 +248,14 @@ function Avaliacao() {
         }
 
         if (currentQuestion === questions.length - 1) {
-            /*
-             * Como o último clique em uma alternativa atualiza
-             * o estado de forma assíncrona, calculamos o resultado
-             * final considerando também a resposta atual.
-             */
-            const finalScore = score + (isCorrect ? 1 : 0)
-
-            const finalStreak = isCorrect ? streak + 1 : 0
-
+            const finalScore = score
             const finalPercentage = Math.round(
                 (finalScore / questions.length) * 100,
             )
 
             const finalXp = finalScore * 100
 
-            const finalBestStreak = Math.max(
-                bestStreak,
-                finalStreak,
-            )
+            const finalBestStreak = bestStreak
 
             const newResult: BestResult = {
                 score: finalScore,
@@ -615,8 +604,8 @@ function Avaliacao() {
                         <div
                             ref={feedbackRef}
                             className={`quiz-feedback ${isCorrect
-                                    ? 'feedback-correct'
-                                    : 'feedback-incorrect'
+                                ? 'feedback-correct'
+                                : 'feedback-incorrect'
                                 }`}
                             role="status"
                             aria-live="polite"

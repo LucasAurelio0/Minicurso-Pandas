@@ -185,7 +185,6 @@ function Avaliacao() {
     const question = questions[currentQuestion]
     const answered = selectedAnswer !== null
     const isCorrect = selectedAnswer === question.correctAnswer
-    const xp = score * 100
 
     /*
      * Depois que o aluno responde, leva automaticamente

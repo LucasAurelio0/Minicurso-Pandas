@@ -53,7 +53,7 @@ function Pratica() {
                     </p>
 
                     <a
-                        href="https://colab.research.google.com/github/LucasAurelio0/Minicurso-Pandas/blob/div/public/notebooks/Exercicio_Exploracao_Pandas_IA.ipynb"
+                        href="https://colab.research.google.com/github/LucasAurelio0/Minicurso-Pandas/blob/main/public/notebooks/Exercicio_Exploracao_Pandas_IA.ipynb"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="primary-button"

@@ -35,7 +35,7 @@ function Aula() {
 
                     <div className="video-container">
                         <iframe
-                            src="https://www.youtube.com/embed/QAZLHAmT46c"
+                            src="https://www.youtube.com/embed/7gmX39Rj8AM?si=OA0CBwU57rGfCZ8I"
                             title="Videoaula do minicurso"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"

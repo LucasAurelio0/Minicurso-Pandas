@@ -49,7 +49,7 @@ const questions: Question[] = [
         correctAnswer: 2,
         feedback: [
             'Os nomes das colunas podem ser observados utilizando, por exemplo, `columns`.',
-            'A quantidade de valores ausentes pode ser investigada com outros comandos, como `isna()`.',
+            'A quantidade de valores ausentes pode ser investigada com comandos como `df.isna().sum()`',
             'Correto! O atributo `shape` informa a quantidade de linhas e colunas do DataFrame.',
             'A média das colunas numéricas pode ser obtida por meio de métodos estatísticos, como `mean()`.',
         ],
@@ -149,7 +149,7 @@ const questions: Question[] = [
             'Memorizar comandos não garante compreensão sobre quando ou por que utilizá-los.',
         ],
         explanation:
-            'A estratégia pode ser resumida como: tentar compreender, explicar, dialogar com a IA, questionar, revisar e verificar.',
+            'A estratégia pode ser resumida como: tentar compreender, explicar com suas próprias palavras, questionar com apoio da IA, identificar lacunas, verificar as informações em fontes confiáveis e revisar sua explicação.',
     },
 ]
 

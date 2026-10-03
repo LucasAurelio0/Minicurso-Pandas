@@ -53,7 +53,7 @@ function Header() {
                     </a>
 
                     <a href="#ia" onClick={closeMenu}>
-                        Aprendendo com IA
+                        Indo além
                     </a>
 
                     <a href="#avaliacao" onClick={closeMenu}>

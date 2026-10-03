@@ -3,10 +3,10 @@ function Pratica() {
         <div className="section pratica-section">
             <div className="container">
                 <span className="section-label">
-                    PRÁTICA
+                    CONSOLIDANDO O CONHECIMENTO
                 </span>
 
-                <h1>Atividade prática</h1>
+                <h1>Coloque em prática o que você viu na aula</h1>
 
                 <p className="section-intro">
                     Agora é sua vez de explorar o conjunto exemplificado na aula utilizando

@@ -3,10 +3,10 @@ function IA() {
         <div className="section ia-section">
             <div className="container">
                 <span className="section-label">
-                    APRENDENDO COM IA
+                    INDO ALÉM
                 </span>
 
-                <h1>Aprender com IA vai além do Pandas</h1>
+                <h1>Uma estratégia que vai além do Pandas</h1>
 
                 <p className="section-intro">
                     A estratégia que você experimentou neste minicurso pode ser

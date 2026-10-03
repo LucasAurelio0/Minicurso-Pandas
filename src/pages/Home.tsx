@@ -207,7 +207,7 @@ function Home() {
             <section className="section section-alt">
                 <div className="container">
                     <span className="section-label">
-                        COMO FUNCIONA
+                        COMO ESTUDAR NESTE CURSO
                     </span>
 
                     <h2>Uma aprendizagem baseada em diálogo</h2>

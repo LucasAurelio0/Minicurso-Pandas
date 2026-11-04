@@ -52,6 +52,10 @@ function Header() {
                         Prática
                     </a>
 
+                    <a href="#ebook" onClick={closeMenu}>
+                        E-book
+                    </a>
+
                     <a href="#ia" onClick={closeMenu}>
                         Indo além
                     </a>

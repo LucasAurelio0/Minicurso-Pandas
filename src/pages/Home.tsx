@@ -3,6 +3,7 @@ import Pratica from './Pratica'
 import IA from './IA'
 import Avaliacao from './Avaliacao'
 import Referencias from './Referencias'
+import Ebook from './Ebook'
 
 function Home() {
     return (
@@ -268,6 +269,11 @@ function Home() {
             {/* PRÁTICA */}
             <section id="pratica">
                 <Pratica />
+            </section>
+
+            {/* E-BOOK */}
+            <section id="ebook">
+                <Ebook />
             </section>
 
             {/* APRENDENDO COM IA */}

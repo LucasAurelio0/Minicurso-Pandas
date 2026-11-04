@@ -107,7 +107,7 @@ button:focus-visible {
 .navigation {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 20px;
 }
 
 .navigation a {
@@ -642,6 +642,115 @@ button:focus-visible {
   color: #475569;
 }
 
+/* =========================================================
+   E-BOOK INTERATIVO
+   ========================================================= */
+
+.ebook-section {
+  background:
+    linear-gradient(180deg,
+      #ffffff 0%,
+      #f8fafc 100%);
+}
+.ebook-help {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  width: min(100%, 650px);
+
+  margin-top: 4px;
+  padding: 18px 20px;
+
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+
+  background: #eff6ff;
+
+  text-align: left;
+}
+
+.ebook-help-icon {
+  display: flex;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #dbeafe;
+  color: #1d4ed8;
+
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.ebook-help-title {
+  display: block;
+  margin-bottom: 5px;
+
+  color: #1e3a8a;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.ebook-help p strong {
+  display: inline;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+.ebook-button {
+  margin-top: 0;
+}
+
+.ebook-tip strong {
+  color: #334155;
+}
+
+.ebook-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 24px;
+
+  margin-top: 35px;
+}
+
+.ebook-embed {
+  position: relative;
+
+  width: min(100%, 430px);
+  height: 820px;
+
+  overflow: hidden;
+
+  border: 1px solid #dbeafe;
+  border-radius: 22px;
+
+  background: #0f172a;
+
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.14);
+}
+
+.ebook-embed iframe {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+}
+
+.ebook-button {
+  margin-top: 4px;
+}
 
 /* =========================================================
    APRENDENDO COM IA
@@ -1025,6 +1134,17 @@ button:focus-visible {
     padding: 20px;
   }
 
+  .ebook-help {
+    padding: 16px;
+  }
+
+  .ebook-help-icon {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+
   .quiz-question {
     padding: 25px 20px;
   }
@@ -1061,6 +1181,13 @@ button:focus-visible {
 }
 
 @media (max-width: 650px) {
+
+  .ebook-embed {
+    width: 100%;
+    max-width: 390px;
+    border-radius: 16px;
+  }
+
   .container {
     width: min(100% - 28px, 1120px);
   }
@@ -1760,27 +1887,27 @@ button:focus-visible {
 
 @media (max-width: 650px) {
   .challenge-flow {
-      flex-direction: column;
-  
-      gap: 10px;
-    }
-  
-    .challenge-flow>span:not(.challenge-arrow) {
-      width: 100%;
-      max-width: 250px;
-    }
-  
-    .challenge-arrow {
-      min-height: 20px;
-    }
-  
-    .challenge-arrow .arrow-desktop {
-      display: none;
-    }
-  
-    .challenge-arrow .arrow-mobile {
-      display: inline;
-    }
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .challenge-flow>span:not(.challenge-arrow) {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .challenge-arrow {
+    min-height: 20px;
+  }
+
+  .challenge-arrow .arrow-desktop {
+    display: none;
+  }
+
+  .challenge-arrow .arrow-mobile {
+    display: inline;
+  }
 }
 
 .ia-section {

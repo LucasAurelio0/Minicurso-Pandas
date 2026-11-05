@@ -4,7 +4,7 @@ import IA from './IA'
 import Avaliacao from './Avaliacao'
 import Referencias from './Referencias'
 import Ebook from './Ebook'
-
+import Infografico from './Infografico'
 function Home() {
     return (
         <main id="inicio">
@@ -274,6 +274,11 @@ function Home() {
             {/* E-BOOK */}
             <section id="ebook">
                 <Ebook />
+            </section>
+
+            {/* GUIA VISUAL */}
+            <section id="infografico">
+                <Infografico />
             </section>
 
             {/* APRENDENDO COM IA */}

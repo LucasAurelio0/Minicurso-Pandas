@@ -56,6 +56,10 @@ function Header() {
                         E-book
                     </a>
 
+                    <a href="#infografico" onClick={closeMenu}>
+                        Infográfico
+                    </a>
+
                     <a href="#ia" onClick={closeMenu}>
                         Indo além
                     </a>

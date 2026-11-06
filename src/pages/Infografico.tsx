@@ -3,7 +3,7 @@ function Infografico() {
         <div className="section infographic-section">
             <div className="container">
                 <span className="section-label">
-                    GUIA VISUAL
+                    Infográfico
                 </span>
 
                 <h2>

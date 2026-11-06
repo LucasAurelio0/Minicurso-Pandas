@@ -32,9 +32,35 @@ function Home() {
                             e do diálogo com Inteligência Artificial.
                         </p>
 
-                        <a href="#aula" className="primary-button">
-                            Começar o curso
-                        </a>
+                        <div className="hero-paths">
+                            <div className="hero-path">
+                                <span className="hero-path-label">
+                                    1ª ETAPA · MINICURSO
+                                </span>
+
+                                <span className="hero-path-description">
+                                    Aula, prática e avaliação
+                                </span>
+
+                                <a href="#aula" className="secondary-button">
+                                    Começar o curso
+                                </a>
+                            </div>
+
+                            <div className="hero-path hero-path-featured">
+                                <span className="hero-path-label">
+                                    2ª ETAPA · MÍDIAS COMPLEMENTARES
+                                </span>
+
+                                <span className="hero-path-description">
+                                    E-book interativo + Infográfico
+                                </span>
+
+                                <a href="#ebook" className="primary-button">
+                                    Explorar as mídias
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="hero-cards">

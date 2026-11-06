@@ -1130,6 +1130,22 @@ button:focus-visible {
 }
 
 @media (max-width: 650px) {
+
+  .hero-paths {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
+  
+    .hero-path {
+      width: 100%;
+    }
+  
+    .hero-path .primary-button,
+    .hero-path .secondary-button {
+      width: 100%;
+    }
+
   .quiz-topbar {
     padding: 20px;
   }
@@ -1993,4 +2009,39 @@ button:focus-visible {
 
 .infographic-button {
   margin-top: 4px;
+}
+
+.hero-paths {
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-path {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-path-label {
+  margin-bottom: 5px;
+
+  color: #2563eb;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.hero-path-description {
+  margin-bottom: 12px;
+
+  color: #64748b;
+  font-size: 0.88rem;
+}
+
+.hero-path .primary-button,
+.hero-path .secondary-button {
+  min-width: 190px;
 }
